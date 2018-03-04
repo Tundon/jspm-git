@@ -107,7 +107,7 @@ function decodeCredentials(str) {
 
 var getGitVersion = function() {
   return new Promise(function(resolve, reject) {
-    execGit(['--version'], null, function(err, stdout, stderr) {
+    execGit(['--version'], {}, function(err, stdout, stderr) {
       var versionArr;
       if (err) {
         logMsg('Error while reading our the Git version: ' + stderr);
